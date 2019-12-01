@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>//ÕıÊ½°æ 
-#include<windows.h>
+#include<bits/stdc++.h>//æ­£å¼ç‰ˆ 
+//#include<windows.h>
 #define RS 49
 #define male 29
 #define female 20
@@ -11,10 +11,10 @@ bool b[55];
 int tot=1;
 int s;
 int shuchu[30][3];
-bool zt[30];						//Êä³ö×´Ì¬ 
-void jc();							//¼ì²é 
-void sc(int x);						//Êä³ö 
-void do_it(){						//×îºóÍ¬×ÀÎ»ÖÃËæ»ú 
+bool zt[30];						//è¾“å‡ºçŠ¶æ€ 
+void jc();							//æ£€æŸ¥ 
+void sc(int x);						//è¾“å‡º 
+void do_it(){						//æœ€ååŒæ¡Œä½ç½®éšæœº 
 	int k;
 	for(int i=1;i<=25;i++){
 		k=rand()%RS+s*739-23;
@@ -33,25 +33,25 @@ void do_it(){						//×îºóÍ¬×ÀÎ»ÖÃËæ»ú
 		zt[k]=true;
 	}	
 }
-int main()									//Ö÷º¯Êı 
+int main()									//ä¸»å‡½æ•° 
 {
-	printf("\t\t½éÉÜ:\n");
-	printf("±¾Ó¦ÓÃ³ÌĞò²»Í¬ÓÚÇ°´úÆäËûÓ¦ÓÃ³ÌĞò£¬Ê¹ÓÃc++ÖĞctime¿âÖĞµÄtime£¨£©Ó¦ÓÃÖÖ×ÓÀ´È¡µÃËæ»úÊı¡£\nÔ­ÒòÊÇ\
-µ±Ê¹ÓÃtimeÉè¶¨ÖÖ×ÓÊ±,µ±Ç°ºóÊ±¼ä²î¹ıĞ¡Ê±Êı¾İ²î±ğÒ²»á¹ıĞ¡£¬ÎŞ·¨´ïµ½Ëæ»úµÄĞ§¹û¡£±¾³ÌĞòÔËÓÃÁË¡°ºûµûĞ§Ó¦¡±£¬\n\
-¼´½«Î¢Ğ¡²î±ğ¸´ÔÓ»¯£¬´Ó¶ø´ïµ½Õû¸öÊı¾İËæ»úµÄĞ§¹û\n(PS:ÈçÒªÍË³ö³ÌĞòÇëÇ¿ĞĞkillÕâ¸ö³ÌĞò)\n(Êı×ÖÖ»ÊÇÒ»¸öÆô¶¯µÄ\
-¿ª¹Ø£¬¼´Ê¹Ç°ºóÊäÈëÒ»ÑùµÄÁ½¸öÊı½á¹ûÒ²ÊÇ²»Ò»ÑùµÄÍÛQWQ)\n\n");
+	printf("\t\tä»‹ç»:\n");
+	printf("æœ¬åº”ç”¨ç¨‹åºä¸åŒäºå‰ä»£å…¶ä»–åº”ç”¨ç¨‹åºï¼Œä½¿ç”¨c++ä¸­ctimeåº“ä¸­çš„timeï¼ˆï¼‰åº”ç”¨ç§å­æ¥å–å¾—éšæœºæ•°ã€‚\nåŸå› æ˜¯\
+å½“ä½¿ç”¨timeè®¾å®šç§å­æ—¶,å½“å‰åæ—¶é—´å·®è¿‡å°æ—¶æ•°æ®å·®åˆ«ä¹Ÿä¼šè¿‡å°ï¼Œæ— æ³•è¾¾åˆ°éšæœºçš„æ•ˆæœã€‚æœ¬ç¨‹åºè¿ç”¨äº†â€œè´è¶æ•ˆåº”â€ï¼Œ\n\
+å³å°†å¾®å°å·®åˆ«å¤æ‚åŒ–ï¼Œä»è€Œè¾¾åˆ°æ•´ä¸ªæ•°æ®éšæœºçš„æ•ˆæœ\n(PS:å¦‚è¦é€€å‡ºç¨‹åºè¯·å¼ºè¡Œkillè¿™ä¸ªç¨‹åº)\n(æ•°å­—åªæ˜¯ä¸€ä¸ªå¯åŠ¨çš„\
+å¼€å…³ï¼Œå³ä½¿å‰åè¾“å…¥ä¸€æ ·çš„ä¸¤ä¸ªæ•°ç»“æœä¹Ÿæ˜¯ä¸ä¸€æ ·çš„å“‡QWQ)\n\n");
 	
 	int k;
 	int ans=0;
 	int tot=0;
 	while(1)  {
-	printf("\n\n\nÇëËæ»úÊäÈëÒ»¸ö10000ÒÔÄÚµÄÊı×Ö:"); 
+	printf("\n\n\nè¯·éšæœºè¾“å…¥ä¸€ä¸ª10000ä»¥å†…çš„æ•°å­—:"); 
 	scanf("%d",&s);
 	memset(ansa,0,sizeof(ansa));
 	memset(b,0,sizeof(b));
 	memset(shuchu,0,sizeof(shuchu));
 	memset(zt,0,sizeof(zt));
-	for(int i=1;i<=female;i++){				//Å®ÉúËæ»ú 
+	for(int i=1;i<=female;i++){				//å¥³ç”Ÿéšæœº 
 		if(tot==female){break;}
 		k=rand()%RS+s*suiji-37;
 		k%=female;
@@ -66,10 +66,10 @@ int main()									//Ö÷º¯Êı
 			}
 		}
 		if(!b[k]){
-		//cout<<k<<"\n";				//µ÷ÊÔ 
+		//cout<<k<<"\n";				//è°ƒè¯• 
 		ansa[i][2]=k;
 		++tot;
-		//printf("%d\n",k);				//µ÷ÊÔ 
+		//printf("%d\n",k);				//è°ƒè¯• 
 		b[k]=true;
 		}
 	}
@@ -82,8 +82,8 @@ int main()									//Ö÷º¯Êı
 	ansa[25][1]=1;
 	ansa[25][2]=0;
 	b[14]=1;b[1]=1;b[0]=1;b[23]=1;tot+=3;
-	//printf("\n\n\n");					 //µ÷ÊÔ 
-	for(int i=1;i<=24;i++){				//ÄĞÉúËæ»ú 
+	//printf("\n\n\n");					 //è°ƒè¯• 
+	for(int i=1;i<=24;i++){				//ç”·ç”Ÿéšæœº 
 		k=rand()%RS+s*suiji-254;
 		k%=male;
 		if(k==0){
@@ -96,14 +96,14 @@ int main()									//Ö÷º¯Êı
 			}
 		}
 		if(!b[k]){
-		//cout<<k<<"\n";			//µ÷ÊÔ 
+		//cout<<k<<"\n";			//è°ƒè¯• 
 		tot++;
 		ansa[i][1]=k;
 		b[k]=true;
 		}
 	}
 	
-	//printf("\n\n\n");//µ÷ÊÔ 
+	//printf("\n\n\n");//è°ƒè¯• 
 	tot=0;
 	int an[55];
 	memset(an,0,sizeof(an));
@@ -114,12 +114,12 @@ int main()									//Ö÷º¯Êı
 			b[i]=true;
 		}
 	}
-	//printf("len=%d\n",len);				//µ÷ÊÔ 
-	for(int i=1;i<=24;i++){				//¼ì²é¿Õ×ùÎ»²¢Ìî³ä 
+	//printf("len=%d\n",len);				//è°ƒè¯• 
+	for(int i=1;i<=24;i++){				//æ£€æŸ¥ç©ºåº§ä½å¹¶å¡«å…… 
 		for(int j=1;j<=2;j++){
 			if(!ansa[i][j]){
 				ansa[i][j]=an[++tot];
-				//printf("%d\n%d\n%d\n\n",i,j,ansa[i][j]); //µ÷ÊÔ 
+				//printf("%d\n%d\n%d\n\n",i,j,ansa[i][j]); //è°ƒè¯• 
 			}
 		}
 	}
@@ -160,56 +160,57 @@ int main()									//Ö÷º¯Êı
 }
 void sc(int x){
 	switch (x){
-		case 0:printf("¿Õ×ù");break;
-		case 1:printf("¹­ººÓğ");break;
-		case 2:printf("Íõ½­º­");break;
-		case 3:printf("ÍõÉùå·");break;
-		case 4:printf("Íõ¿¡´ï");break;
-		case 5:printf("ÍõºÆÁÖ");break;
-		case 6:printf("Íõè÷°²");break;
-		case 7:printf("Íõè÷Òà");break;
-		case 8:printf("ÍõÅôÈ»");break;
-		case 9:printf("Íõî£");break;
-		case 10:printf("ÁõÌïØü");break;
-		case 11:printf("Áõ´«çù");break;
-		case 12:printf("ËïÁÖĞù");break;
-		case 13:printf("ÂÀÔ½");break;
-		case 14:printf("Ëï¸£Ôó");break;
-		case 15:printf("ÕÅÁ¦Ñó");break;
-		case 16:printf("ËÎÒàÀ´");break;
-		case 17:printf("Ğ¤×¿");break;
-		case 18:printf("³Âãü¼Î");break;
-		case 19:printf("Îâ¼ÑÈå");break;
-		case 20:printf("ÕÅ¼ÒÃ÷");break;
-		case 21:printf("ÕÅöªÎ°");break;
-		case 22:printf("ÕÅºÕÓí");break;
-		case 23:printf("Ö£ÔÆæñ");break;
-		case 24:printf("ÁÖÈğº­");break;
-		case 25:printf("ÕÔÍòÃù");break;
-		case 26:printf("ÕÔÃ÷Ôó");break;
-		case 27:printf("½ªÕÜ");break;
-		case 28:printf("ºÂÈğÉı");break;
-		case 29:printf("ÇØ¶°");break;
-		case 30:printf("èïÊ¤³¼");break;
-		case 31:printf("ÍõË«Ë«");break;
-		case 32:printf("ÍõÆëÉº");break;
-		case 33:printf("ÂÀ¼ÑĞÀ");break;
-		case 34:printf("Áõ¼ÑÈğ");break;
-		case 35:printf("ÁõË¼ÒÇ");break;
-		case 36:printf("ËïÁøâù");break;
-		case 37:printf("ËïĞÇÒÆ");break;
-		case 38:printf("³ÂÒ»Åµ");break;
-		case 39:printf("Àî¼ÑÄş");break;
-		case 40:printf("ÀîÓêæ­");break;
-		case 41:printf("ÕÅè÷Í¬");break;
-		case 42:printf("ÕÅÇşÇå");break;
-		case 43:printf("ºéî£Ü°");break;
-		case 44:printf("ÌÆÃúè´");break;
-		case 45:printf("Ğì¾´ÎÄ");break;
-		case 46:printf("èï»Ûåû");break;
-		case 47:printf("¶­ÓêÃÈ");break;
-		case 48:printf("¶­î£");break;
-		case 49:printf("ôÃÒÕĞÀ");break;
+		case 0:printf("mç©ºåº§");break;
+		case 1:printf("må¼“æ±‰ç¾½");break;
+		case 2:printf("mç‹æ±Ÿæ¶µ");break;
+		case 3:printf("mç‹å£°å®¸");break;
+		case 4:printf("mç‹ä¿Šè¾¾");break;
+		case 5:printf("mç‹æµ©æ—");break;
+		case 6:printf("mç‹æ¢“å®‰");break;
+		case 7:printf("mç‹æ¢“äº¦");break;
+		case 8:printf("mç‹é¹ç„¶");break;
+		case 9:printf("mç‹ç¿");break;
+		case 10:printf("måˆ˜ç”°æ”¸");break;
+		case 11:printf("måˆ˜ä¼ ç¦");break;
+		case 12:printf("må­™æ—è½©");break;
+		case 13:printf("må•è¶Š");break;
+		case 14:printf("må­™ç¦æ³½");break;
+		case 15:printf("må¼ åŠ›æ´‹");break;
+		case 16:printf("må®‹äº¦æ¥");break;
+		case 17:printf("mè‚–å“");break;
+		case 18:printf("mé™ˆæ³“å˜‰");break;
+		case 19:printf("må´ä½³å„’");break;
+		case 20:printf("må¼ å®¶æ˜");break;
+		case 21:printf("må¼ éœ†ä¼Ÿ");break;
+		case 22:printf("må¼ èµ«ç¦¹");break;
+		case 23:printf("méƒ‘äº‘éªœ");break;
+		case 24:printf("mæ—ç‘æ¶µ");break;
+		case 25:printf("mèµµä¸‡é¸£");break;
+		case 26:printf("mèµµæ˜æ³½");break;
+		case 27:printf("må§œå“²");break;
+		case 28:printf("méƒç‘å‡");break;
+		case 29:printf("mç§¦æ ‹");break;
+		case 30:printf("mæ ¾èƒœè‡£");break;
+
+		case 31:printf("ç‹åŒåŒ");break;
+		case 32:printf("ç‹é½çŠ");break;
+		case 33:printf("å•ä½³æ¬£");break;
+		case 34:printf("åˆ˜ä½³ç‘");break;
+		case 35:printf("åˆ˜æ€ä»ª");break;
+		case 36:printf("å­™æŸ³æ€¡");break;
+		case 37:printf("å­™æ˜Ÿç§»");break;
+		case 38:printf("é™ˆä¸€è¯º");break;
+		case 39:printf("æä½³å®");break;
+		case 40:printf("æé›¨å§");break;
+		case 41:printf("å¼ æ¢“åŒ");break;
+		case 42:printf("å¼ æ¸ æ¸…");break;
+		case 43:printf("æ´ªç¿é¦¨");break;
+		case 44:printf("å”é“­ç’");break;
+		case 45:printf("å¾æ•¬æ–‡");break;
+		case 46:printf("æ ¾æ…§å¦");break;
+		case 47:printf("è‘£é›¨èŒ");break;
+		case 48:printf("è‘£ç¿");break;
+		case 49:printf("è£˜è‰ºæ¬£");break;
 	}	
 }
 void jc(){
