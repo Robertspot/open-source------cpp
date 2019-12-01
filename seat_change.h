@@ -19,7 +19,7 @@ namespace SeatChangeProcessor{
      * @param __num length of the permutation
      * @return permutation
      */
-    IntegerList __randPermutation(int);
+    IntegerList __randPermutation(size_t __num);
 
     /**
      * @brief Shuffle a vector
@@ -27,7 +27,7 @@ namespace SeatChangeProcessor{
      * @return Nothing
      */
     template<typename T>
-    void __shuffle(std::vector<T>&);
+    void __shuffle(std::vector<T>& __list);
 
     /**
      * @brief Handle an exception when the number of female students is greater than thie number of male students
@@ -36,7 +36,7 @@ namespace SeatChangeProcessor{
      * @param __num_m Number of male students
      * @return Never
      */
-    void __throw_unexpected_amount(size_t,size_t);
+    void __throw_unexpected_amount(size_t __num_f,size_t __num_m);
 
     /**
      * @brief Process of seat change (Only suitable for DL24 where the number of male students is far more than the number of female students.)
@@ -45,11 +45,11 @@ namespace SeatChangeProcessor{
      * @param __list_male_b names of male students that are not allowed to seat beside female students
      * @return Seat arrangement table
      */
-    PairedNameList seatChange(NameList&,NameList&,NameList);
+    PairedNameList seatChange(NameList& __list_female,NameList& __list_male_a,NameList __list_male_b);
 
 
     
-    IntegerList __randPermutation(int __num){
+    IntegerList __randPermutation(size_t __num){
         srand((unsigned)time(NULL));
         IntegerList numList(__num);
         for(IntegerList::iterator __p = numList.begin();__p < numList.end();__p++){

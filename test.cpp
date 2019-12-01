@@ -1,14 +1,13 @@
 #include"seat_change.h"
+#include"file_io.h"
 #include<stdio.h>
 #include<iostream>
 using namespace SeatChangeProcessor;
 int main(){
-    NameList f({"f-a","f-b","f-c"});
-    NameList m({"m-a","m-b","m-c","m-d","m-e","m-f"});
-    NameList m2({"2-a","2-b","2-c","2-d"});
-    PairedNameList pl = seatChange(f,m,m2);
-    for(int i = 0;i<pl.size();i++){
-        std::cout<<pl[i].first<<" "<<pl[i].second<<"\n";
-    }
+    FILE* in = fopen("in.csv","rb");
+    FILE* out = fopen("out.csv","wb");
+    TriPair grp = read_file(in);
+    PairedNameList pl = seatChange(grp.female,grp.male1,grp.male2);
+    write_file(out,pl);
     return 0;
 }
